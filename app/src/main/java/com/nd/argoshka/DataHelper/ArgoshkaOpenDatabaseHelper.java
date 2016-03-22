@@ -76,15 +76,10 @@ public class ArgoshkaOpenDatabaseHelper extends OrmLiteSqliteOpenHelper {
 
 }
 
-
+/*
 public class MainActivity extends Activity {
 
 
-    /**
-     * The testOutOrmLiteDatabase method is called each time a new instance of the
-     * application is created.
-     * @param savedInstanceState
-     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -99,11 +94,7 @@ public class MainActivity extends Activity {
         }
     }
 
-    /**
-     * Testing out the TodoOrmLiteExample app by creating some Todo entries in the database,
-     * and querying for all the Todo object from the todo table.
-     * @throws SQLException
-     */
+
     private void testOutOrmLiteDatabase() throws SQLException {
         TodoOpenDatabaseHelper todoOpenDatabaseHelper = OpenHelperManager.getHelper(this,
                 TodoOpenDatabaseHelper.class);
@@ -124,3 +115,4 @@ public class MainActivity extends Activity {
 
         List<Todo> todos = todoDao.queryForAll();
     }
+*/
