@@ -48,4 +48,79 @@ public class ArgoshkaOpenDatabaseHelper extends OrmLiteSqliteOpenHelper {
             e.printStackTrace();
         }
     }
+
+
+    public Dao<Client,Long> getDaoClients() throws SQLException {
+        if(daoClients == null) {
+            daoClients = getDao(Client.class);
+        }
+        return daoClients;
+    }
+
+    public Dao<Order,Long> getDaoOrders() throws SQLException {
+        if(daoOrders == null) {
+            daoOrders = getDao(Order.class);
+        }
+
+        return daoOrders;
+    }
+
+    public Dao<Goods,Long> getDaoGoods() throws SQLException {
+        if(daoGoods == null) {
+            daoGoods = getDao(Goods.class);
+        }
+
+        return daoGoods;
+    }
+
+
 }
+
+
+public class MainActivity extends Activity {
+
+
+    /**
+     * The testOutOrmLiteDatabase method is called each time a new instance of the
+     * application is created.
+     * @param savedInstanceState
+     */
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        try {
+
+            testOutOrmLiteDatabase();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Testing out the TodoOrmLiteExample app by creating some Todo entries in the database,
+     * and querying for all the Todo object from the todo table.
+     * @throws SQLException
+     */
+    private void testOutOrmLiteDatabase() throws SQLException {
+        TodoOpenDatabaseHelper todoOpenDatabaseHelper = OpenHelperManager.getHelper(this,
+                TodoOpenDatabaseHelper.class);
+
+        Dao<Todo, Long> todoDao = todoOpenDatabaseHelper.getDao();
+
+        Date currDateTime = new Date(System.currentTimeMillis());
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(currDateTime);
+        calendar.add(Calendar.DATE, 14);
+
+        Date dueDate = calendar.getTime();
+
+        todoDao.create(new Todo("Todo Example 1", "Todo Example 1 Description", currDateTime, dueDate));
+        todoDao.create(new Todo("Todo Example 2", "Todo Example 2 Description", currDateTime, dueDate));
+        todoDao.create(new Todo("Todo Example 3", "Todo Example 3 Description", currDateTime, dueDate));
+
+        List<Todo> todos = todoDao.queryForAll();
+    }

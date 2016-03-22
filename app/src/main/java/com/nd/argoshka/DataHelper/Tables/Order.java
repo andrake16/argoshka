@@ -9,6 +9,7 @@ public class Order {
     @DatabaseField(generatedId = true)
     private Long id;
 
-    
+    @DatabaseField()
+    private String textOfOrder;
 
 }

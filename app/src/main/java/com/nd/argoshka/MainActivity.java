@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class MainActivity extends Activity {//extends ListActivity  {
-    ArrayAdapter<String> adapter1,adapter2;
+    ArrayAdapter<String> adapter1,adapter2,adapter3;
     HashMap<String,String> client;
     List<String> lData,lData2;
     ListView lv;
@@ -60,6 +60,7 @@ public class MainActivity extends Activity {//extends ListActivity  {
 
         adapter1 = new ArrayAdapter<String>(this,R.layout.list_item,R.id.tvName, lData);
         adapter2 = new ArrayAdapter<String>(this,R.layout.list_item,R.id.tvName, lData2);
+
 
 
         lv.setAdapter(adapter1);
