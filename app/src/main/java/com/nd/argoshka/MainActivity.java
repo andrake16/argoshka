@@ -10,6 +10,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.j256.ormlite.android.apptools.OpenHelperManager;
+import com.j256.ormlite.dao.Dao;
+import com.nd.argoshka.DataHelper.ArgoshkaOpenDatabaseHelper;
+
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -79,6 +84,29 @@ public class MainActivity extends Activity {//extends ListActivity  {
             lv.setAdapter(adapter2);
         }
     };
+
+
+    private void testOutOrmLiteDatabase() throws SQLException {
+        ArgoshkaOpenDatabaseHelper todoOpenDatabaseHelper = OpenHelperManager.getHelper(this,
+        ArgoshkaOpenDatabaseHelper argoshkaOpenDatabaseHelper = OpenHelperManager()
+                TodoOpenDatabaseHelper.class);
+
+        Dao<Todo, Long> todoDao = todoOpenDatabaseHelper.getDao();
+
+        Date currDateTime = new Date(System.currentTimeMillis());
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(currDateTime);
+        calendar.add(Calendar.DATE, 14);
+
+        Date dueDate = calendar.getTime();
+
+        todoDao.create(new Todo("Todo Example 1", "Todo Example 1 Description", currDateTime, dueDate));
+        todoDao.create(new Todo("Todo Example 2", "Todo Example 2 Description", currDateTime, dueDate));
+        todoDao.create(new Todo("Todo Example 3", "Todo Example 3 Description", currDateTime, dueDate));
+
+        List<Todo> todos = todoDao.queryForAll();
+    }
 
     /*
     @Override
