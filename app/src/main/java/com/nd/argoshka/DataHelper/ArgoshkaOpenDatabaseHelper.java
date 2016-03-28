@@ -75,3 +75,47 @@ public class ArgoshkaOpenDatabaseHelper extends OrmLiteSqliteOpenHelper {
 
 
 }
+<<<<<<< HEAD
+=======
+
+/*
+public class MainActivity extends Activity {
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        try {
+
+            testOutOrmLiteDatabase();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private void testOutOrmLiteDatabase() throws SQLException {
+        TodoOpenDatabaseHelper todoOpenDatabaseHelper = OpenHelperManager.getHelper(this,
+                TodoOpenDatabaseHelper.class);
+
+        Dao<Todo, Long> todoDao = todoOpenDatabaseHelper.getDao();
+
+        Date currDateTime = new Date(System.currentTimeMillis());
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(currDateTime);
+        calendar.add(Calendar.DATE, 14);
+
+        Date dueDate = calendar.getTime();
+
+        todoDao.create(new Todo("Todo Example 1", "Todo Example 1 Description", currDateTime, dueDate));
+        todoDao.create(new Todo("Todo Example 2", "Todo Example 2 Description", currDateTime, dueDate));
+        todoDao.create(new Todo("Todo Example 3", "Todo Example 3 Description", currDateTime, dueDate));
+
+        List<Todo> todos = todoDao.queryForAll();
+    }
+*/
+>>>>>>> 7f4d8db1e42081cd621860c6a68cf699f1da309b
