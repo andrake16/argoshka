@@ -2,16 +2,19 @@ package com.nd.argoshka;
 
 import android.app.Activity;
 import android.app.ListActivity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.j256.ormlite.android.apptools.OpenHelperManager;
 import com.j256.ormlite.dao.Dao;
+import com.nd.argoshka.Activities.AddClientActivity;
 import com.nd.argoshka.DataHelper.ArgoshkaOpenDatabaseHelper;
 import com.nd.argoshka.DataHelper.Tables.Order;
 
@@ -25,14 +28,32 @@ public class MainActivity extends Activity {//extends ListActivity  {
     HashMap<String,String> client;
     List<String> lData,lData2;
     ListView lv;
-
-
+    Button addClientBtn;
+    Button aboutSoftWareBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         lv = (ListView) findViewById(R.id.listView);
+        addClientBtn = (Button)findViewById(R.id.addClientButton);
+        aboutSoftWareBtn = (Button)findViewById(R.id.AboutSoftwareBtn);
+
+        aboutSoftWareBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setContentView(R.layout.activity_about);
+            }
+        });
+
+        addClientBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //setContentView(R.layout.activity_add_client);
+                Intent intent = new Intent(MainActivity.this, AddClientActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
         List<HashMap<String,String>> clients = new ArrayList<HashMap<String,String>>();

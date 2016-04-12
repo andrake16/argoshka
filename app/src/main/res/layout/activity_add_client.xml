@@ -26,7 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                android:text="Client Name:"
+                android:text="@string/client_name"
                 android:id="@+id/textView"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
@@ -36,13 +36,13 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:inputType="textPersonName"
-                android:text="Name"
+                android:text="@string/name"
                 android:ems="10"
                 android:id="@+id/editText"
                 android:background="#ffffff"
                 android:layout_margin="10dp"
                 android:autoText="false"
-                android:gravity="center_vertical|right"
+                android:gravity="center_vertical|end"
                 android:paddingRight="@dimen/TF_textPadding_right" />
 
         </LinearLayout>
@@ -50,28 +50,28 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp">
+            android:layout_height="wrap_content">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                android:text="Client Surname:"
+                android:text="@string/client_surname"
                 android:id="@+id/textView2"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp" />
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="5dp" />
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:inputType="textPersonName"
-                android:text="Surname"
+                android:text="@string/surname"
                 android:ems="10"
                 android:id="@+id/editText2"
                 android:background="#ffffff"
                 android:layout_margin="10dp"
-                android:gravity="center_vertical|right"
+                android:gravity="center_vertical|end"
                 android:paddingRight="@dimen/TF_textPadding_right" />
         </LinearLayout>
 
@@ -85,7 +85,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                android:text="Client Patronymic:"
+                android:text="@string/client_patronymic"
                 android:id="@+id/textView3"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp" />
@@ -105,8 +105,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add Client"
-            android:id="@+id/button3"
+            android:text="@string/add_client"
+            android:id="@+id/doAddClientBtn"
             android:layout_gravity="right"
             android:background="#1c92e8"
             android:layout_marginRight="15dp"

@@ -1,5 +1,20 @@
 <resources>
     <string name="app_name">argoshka</string>
     <string name="cientName">name</string>
+    <string name="client_surname">Client Surname:</string>
+    <string name="surname">Surname</string>
+    <string name="client_patronymic">Client Patronymic:</string>
+    <string name="add_client">Add Client</string>
+    <string name="client_name">Client Name:</string>
+    <string name="name">Name</string>
+    <string name="aboutText">
+        У лукоморья дуб зелёный;\n
+        Златая цепь на дубе том:\n
+        И днём и ночью <b>кот учёный</b>\n
+        Всё ходит по цепи кругом;\n
+        Идёт <b>направо</b> - песнь заводит,\n
+        <b>Налево</b> - сказку говорит.</string>
+    <string name="aboutTitle">About Software</string>
+
 
 </resources>
