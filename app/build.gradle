@@ -20,11 +20,16 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.j256.ormlite:ormlite-core:4.48'
     compile 'com.j256.ormlite:ormlite-android:4.48'
     compile 'com.android.support:design:23.1.1'
+    compile files('src/androidTest/java/minimal-json-0.9.4.jar')
+    compile project(':gson-2.2')
+
+    // https://mvnrepository.com/artifact/com.eclipsesource.minimal-json/minimal-json
+    compile group: 'com.eclipsesource.minimal-json', name: 'minimal-json', version: '0.9.1'
 
 }
